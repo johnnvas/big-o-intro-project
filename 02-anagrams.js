@@ -37,10 +37,20 @@ function thirdAnagram(str1, str2) {
       obj1[str1[i]]++;
     }
   }
-
+  for (let j = 0; j < str2.length; j++) {
+    if (!obj2[str2[j]]) {
+      obj2[str2[j]] = 1;
+    } else {
+      obj2[str2[j]]++;
+    }
+  }
+//  console.log(obj1, obj2)
 }
+console.log(thirdAnagram("gizmo", "sally"));    //
+console.log(thirdAnagram("elvis", "lives"));    //
 
 
 function fourthAnagram(str1, str2) {
   // Code goes here ....
+  
 }
