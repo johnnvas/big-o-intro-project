@@ -1,28 +1,43 @@
 function firstAnagram(str1, str2) {
   // Code goes here ....
+
   let arr = str2.split('')
-  for (let i = 0; i <= str1.length - 1; i++) {
+  for (let i = 0; i < str1.length; i++) {
     let letter = str1[i]
-    if (arr.includes(letter)) {
-      arr.splice(str2.indexOf(letter), 1)
-    } else {
+    if (arr.indexOf(letter) === -1) {
       return false;
+    } else {
+      arr.splice(arr.indexOf(letter), 1)
     }
   }
-  if (!arr.length) return true;
 
+  return !arr.length;
 }
-console.log(firstAnagram("gizmo", "sally"));    // => false
-console.log(firstAnagram("elvis", "lives"));    // => true
+
+
 
 
 function secondAnagram(str1, str2) {
-  // Code goes here ....
-}
+  let arr1 = str1.split('').sort()
+  let arr2 = str2.split('').sort()
 
+  return arr1.join('') === arr2.join('');
+}
+// console.log(secondAnagram("gizmo", "sally"));    // => false
+// console.log(secondAnagram("elvis", "lives"));    // => true
 
 function thirdAnagram(str1, str2) {
-  // Code goes here ....
+  let obj1 = {};
+  let obj2 = {};
+
+  for (let i = 0; i < str1.length; i++) {
+    if (!obj1[str1[i]]) {
+      obj1[str1[i]] = 1;
+    } else {
+      obj1[str1[i]]++;
+    }
+  }
+
 }
 
 
